@@ -60,7 +60,7 @@ type File struct {
 }
 
 // NewFile returns a new go-fuse File instance.
-func NewFile(fd *os.File, fs *FS) (*File, fuse.Status) {
+func NewFile(fd *os.File, fs *FS) (nodefs.File, fuse.Status) {
 	var st syscall.Stat_t
 	err := syscall.Fstat(int(fd.Fd()), &st)
 	if err != nil {
@@ -70,14 +70,19 @@ func NewFile(fd *os.File, fs *FS) (*File, fuse.Status) {
 	qi := openfiletable.QInoFromStat(&st)
 	e := openfiletable.Register(qi)
 
-	return &File{
-		fd:             fd,
-		contentEnc:     fs.contentEnc,
-		qIno:           qi,
-		fileTableEntry: e,
-		loopbackFile:   nodefs.NewLoopbackFile(fd),
-		fs:             fs,
-		File:           nodefs.NewDefaultFile(),
+	return &nodefs.WithFlags{
+		// Disable kernel page cache. This option prevents the kernel from
+		// requesting reads non-sequentially.
+		FuseFlags: fuse.FOPEN_DIRECT_IO,
+		File: &File{
+			fd:             fd,
+			contentEnc:     fs.contentEnc,
+			qIno:           qi,
+			fileTableEntry: e,
+			loopbackFile:   nodefs.NewLoopbackFile(fd),
+			fs:             fs,
+			File:           nodefs.NewDefaultFile(),
+		},
 	}, fuse.OK
 }
 

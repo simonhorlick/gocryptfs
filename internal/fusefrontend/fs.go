@@ -183,7 +183,7 @@ func (fs *FS) openBackingFile(relPath string, flags int) (fd int, err error) {
 // problem if the file permissions do not allow reading (i.e. 0200 permissions).
 // This function works around that problem by chmod'ing the file, obtaining a fd,
 // and chmod'ing it back.
-func (fs *FS) openWriteOnlyFile(dirfd int, cName string, newFlags int) (*File, fuse.Status) {
+func (fs *FS) openWriteOnlyFile(dirfd int, cName string, newFlags int) (nodefs.File, fuse.Status) {
 	woFd, err := syscallcompat.Openat(dirfd, cName, syscall.O_WRONLY|syscall.O_NOFOLLOW, 0)
 	if err != nil {
 		return nil, fuse.ToStatus(err)
