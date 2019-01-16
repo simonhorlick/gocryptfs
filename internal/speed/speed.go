@@ -12,9 +12,9 @@ import (
 	"log"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/internal/prefer_openssl"
-	"github.com/rfjakob/gocryptfs/internal/siv_aead"
-	"github.com/rfjakob/gocryptfs/internal/stupidgcm"
+	"github.com/simonhorlick/gocryptfs/internal/prefer_openssl"
+	"github.com/simonhorlick/gocryptfs/internal/siv_aead"
+	"github.com/simonhorlick/gocryptfs/internal/stupidgcm"
 )
 
 // Run - run the speed the test and print the results.

@@ -6,10 +6,10 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/rfjakob/gocryptfs/internal/nametransform"
-	"github.com/rfjakob/gocryptfs/internal/pathiv"
-	"github.com/rfjakob/gocryptfs/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/nametransform"
+	"github.com/simonhorlick/gocryptfs/internal/pathiv"
+	"github.com/simonhorlick/gocryptfs/internal/syscallcompat"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 )
 
 // abs basically returns storage dir + "/" + relPath.

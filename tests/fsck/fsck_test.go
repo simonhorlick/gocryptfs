@@ -11,8 +11,8 @@ import (
 
 	"github.com/pkg/xattr"
 
-	"github.com/rfjakob/gocryptfs/internal/exitcodes"
-	"github.com/rfjakob/gocryptfs/tests/test_helpers"
+	"github.com/simonhorlick/gocryptfs/internal/exitcodes"
+	"github.com/simonhorlick/gocryptfs/tests/test_helpers"
 )
 
 func dec64(in string) (out []byte) {

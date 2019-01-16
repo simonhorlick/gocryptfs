@@ -4,7 +4,7 @@ import (
 	"crypto/sha256"
 	"encoding/binary"
 
-	"github.com/rfjakob/gocryptfs/internal/nametransform"
+	"github.com/simonhorlick/gocryptfs/internal/nametransform"
 )
 
 // Purpose identifies for which purpose the IV will be used. This is mixed into the

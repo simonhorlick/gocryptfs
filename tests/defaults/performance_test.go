@@ -8,7 +8,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/tests/test_helpers"
+	"github.com/simonhorlick/gocryptfs/tests/test_helpers"
 )
 
 // Benchmarks

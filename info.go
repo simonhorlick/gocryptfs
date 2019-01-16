@@ -7,10 +7,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/rfjakob/gocryptfs/internal/configfile"
-	"github.com/rfjakob/gocryptfs/internal/contentenc"
-	"github.com/rfjakob/gocryptfs/internal/exitcodes"
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/configfile"
+	"github.com/simonhorlick/gocryptfs/internal/contentenc"
+	"github.com/simonhorlick/gocryptfs/internal/exitcodes"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 )
 
 // info pretty-prints the contents of the config file at "filename" for human

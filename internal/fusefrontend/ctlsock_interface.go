@@ -7,10 +7,10 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/rfjakob/gocryptfs/internal/ctlsock"
-	"github.com/rfjakob/gocryptfs/internal/nametransform"
-	"github.com/rfjakob/gocryptfs/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/ctlsock"
+	"github.com/simonhorlick/gocryptfs/internal/nametransform"
+	"github.com/simonhorlick/gocryptfs/internal/syscallcompat"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 )
 
 var _ ctlsock.Interface = &FS{} // Verify that interface is implemented.

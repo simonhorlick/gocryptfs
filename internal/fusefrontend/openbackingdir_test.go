@@ -7,8 +7,8 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/rfjakob/gocryptfs/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/tests/test_helpers"
+	"github.com/simonhorlick/gocryptfs/internal/syscallcompat"
+	"github.com/simonhorlick/gocryptfs/tests/test_helpers"
 )
 
 func TestOpenBackingDir(t *testing.T) {

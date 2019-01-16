@@ -4,7 +4,7 @@
 package prefer_openssl
 
 import (
-	"github.com/rfjakob/gocryptfs/internal/stupidgcm"
+	"github.com/simonhorlick/gocryptfs/internal/stupidgcm"
 )
 
 // PreferOpenSSL returns true if OpenSSL should be used.

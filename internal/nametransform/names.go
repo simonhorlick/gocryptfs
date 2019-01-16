@@ -9,7 +9,7 @@ import (
 
 	"github.com/rfjakob/eme"
 
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 )
 
 // NameTransform is used to transform filenames.

@@ -8,10 +8,10 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/internal/configfile"
-	"github.com/rfjakob/gocryptfs/internal/exitcodes"
+	"github.com/simonhorlick/gocryptfs/internal/configfile"
+	"github.com/simonhorlick/gocryptfs/internal/exitcodes"
 
-	"github.com/rfjakob/gocryptfs/tests/test_helpers"
+	"github.com/simonhorlick/gocryptfs/tests/test_helpers"
 )
 
 func isTrezorConnected() bool {

@@ -7,12 +7,12 @@ import (
 	"io"
 	"os"
 
-	"github.com/rfjakob/gocryptfs/internal/configfile"
-	"github.com/rfjakob/gocryptfs/internal/contentenc"
-	"github.com/rfjakob/gocryptfs/internal/cryptocore"
-	"github.com/rfjakob/gocryptfs/internal/exitcodes"
-	"github.com/rfjakob/gocryptfs/internal/readpassword"
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/configfile"
+	"github.com/simonhorlick/gocryptfs/internal/contentenc"
+	"github.com/simonhorlick/gocryptfs/internal/cryptocore"
+	"github.com/simonhorlick/gocryptfs/internal/exitcodes"
+	"github.com/simonhorlick/gocryptfs/internal/readpassword"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 )
 
 const (

@@ -25,8 +25,8 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/rfjakob/gocryptfs/internal/stupidgcm"
-	"github.com/rfjakob/gocryptfs/tests/test_helpers"
+	"github.com/simonhorlick/gocryptfs/internal/stupidgcm"
+	"github.com/simonhorlick/gocryptfs/tests/test_helpers"
 )
 
 // Several tests need to be aware if plaintextnames is active or not, so make this
@@ -687,7 +687,7 @@ func TestMkfifo(t *testing.T) {
 }
 
 // TestMagicNames verifies that "magic" names are handled correctly
-// https://github.com/rfjakob/gocryptfs/issues/174
+// https://github.com/simonhorlick/gocryptfs/issues/174
 func TestMagicNames(t *testing.T) {
 	names := []string{"gocryptfs.longname.QhUr5d9FHerwEs--muUs6_80cy6JRp89c1otLwp92Cs", "gocryptfs.diriv"}
 	for _, n := range names {

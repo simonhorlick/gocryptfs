@@ -12,9 +12,9 @@ import (
 
 	"github.com/hanwen/go-fuse/fuse"
 
-	"github.com/rfjakob/gocryptfs/internal/cryptocore"
-	"github.com/rfjakob/gocryptfs/internal/stupidgcm"
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/cryptocore"
+	"github.com/simonhorlick/gocryptfs/internal/stupidgcm"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 )
 
 // NonceMode determines how nonces are created.
@@ -174,7 +174,7 @@ func (be *ContentEnc) DecryptBlock(ciphertext []byte, blockNo uint64, fileID []b
 	nonce := ciphertext[:be.cryptoCore.IVLen]
 	if bytes.Equal(nonce, be.allZeroNonce) {
 		// Bug in tmpfs?
-		// https://github.com/rfjakob/gocryptfs/issues/56
+		// https://github.com/simonhorlick/gocryptfs/issues/56
 		// http://www.spinics.net/lists/kernel/msg2370127.html
 		return nil, errors.New("all-zero nonce")
 	}

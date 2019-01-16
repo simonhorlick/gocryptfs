@@ -7,7 +7,7 @@ package ensurefds012
 //
 // Use like this:
 //
-//   import _ "github.com/rfjakob/gocryptfs/internal/ensurefds012"
+//   import _ "github.com/simonhorlick/gocryptfs/internal/ensurefds012"
 //
 // The import line MUST be in the alphabitcally first source code file of
 // package main!
@@ -27,13 +27,13 @@ package ensurefds012
 //   l-wx------. 1 jakob jakob 64 Jan  5 15:54 3 -> /dev/null
 //   lrwx------. 1 jakob jakob 64 Jan  5 15:54 4 -> 'anon_inode:[eventpoll]'
 //
-// See https://github.com/rfjakob/gocryptfs/issues/320 for details.
+// See https://github.com/simonhorlick/gocryptfs/issues/320 for details.
 
 import (
 	"os"
 	"syscall"
 
-	"github.com/rfjakob/gocryptfs/internal/exitcodes"
+	"github.com/simonhorlick/gocryptfs/internal/exitcodes"
 )
 
 func init() {

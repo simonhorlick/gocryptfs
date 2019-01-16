@@ -10,9 +10,9 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/rfjakob/gocryptfs/internal/ctlsock"
-	"github.com/rfjakob/gocryptfs/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/tests/test_helpers"
+	"github.com/simonhorlick/gocryptfs/internal/ctlsock"
+	"github.com/simonhorlick/gocryptfs/internal/syscallcompat"
+	"github.com/simonhorlick/gocryptfs/tests/test_helpers"
 )
 
 // TestLongnameStat checks that file names of all sizes (1 to 255) show up in
@@ -184,7 +184,7 @@ func TestEnoent(t *testing.T) {
 // If the symlink target gets too long due to base64 encoding, we should
 // return ENAMETOOLONG instead of having the kernel reject the data and
 // returning an I/O error to the user.
-// https://github.com/rfjakob/gocryptfs/issues/167
+// https://github.com/simonhorlick/gocryptfs/issues/167
 func TestTooLongSymlink(t *testing.T) {
 	var err error
 	var l int

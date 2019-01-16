@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/rfjakob/gocryptfs/internal/cryptocore"
+	"github.com/simonhorlick/gocryptfs/internal/cryptocore"
 )
 
 const (

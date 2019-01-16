@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/tests/test_helpers"
+	"github.com/simonhorlick/gocryptfs/tests/test_helpers"
 )
 
 var x240 = string(bytes.Repeat([]byte("x"), 240))

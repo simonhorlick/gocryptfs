@@ -3,7 +3,7 @@ package contentenc
 import (
 	"log"
 
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 )
 
 // Contentenc methods that translate offsets between ciphertext and plaintext

@@ -5,7 +5,7 @@ package readpassword
 import (
 	"os"
 
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 )
 
 const (

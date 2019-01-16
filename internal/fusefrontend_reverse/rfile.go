@@ -13,10 +13,10 @@ import (
 	"github.com/hanwen/go-fuse/fuse"
 	"github.com/hanwen/go-fuse/fuse/nodefs"
 
-	"github.com/rfjakob/gocryptfs/internal/contentenc"
-	"github.com/rfjakob/gocryptfs/internal/pathiv"
-	"github.com/rfjakob/gocryptfs/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/contentenc"
+	"github.com/simonhorlick/gocryptfs/internal/pathiv"
+	"github.com/simonhorlick/gocryptfs/internal/syscallcompat"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 )
 
 type reverseFile struct {

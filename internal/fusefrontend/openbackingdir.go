@@ -5,8 +5,8 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/rfjakob/gocryptfs/internal/nametransform"
-	"github.com/rfjakob/gocryptfs/internal/syscallcompat"
+	"github.com/simonhorlick/gocryptfs/internal/nametransform"
+	"github.com/simonhorlick/gocryptfs/internal/syscallcompat"
 )
 
 // openBackingDir opens the parent ciphertext directory of plaintext path

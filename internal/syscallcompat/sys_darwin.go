@@ -35,7 +35,7 @@ func pthread_setugid_np(uid uint32, gid uint32) (err error) {
 
 // Sorry, fallocate is not available on OSX at all and
 // fcntl F_PREALLOCATE is not accessible from Go.
-// See https://github.com/rfjakob/gocryptfs/issues/18 if you want to help.
+// See https://github.com/simonhorlick/gocryptfs/issues/18 if you want to help.
 func EnospcPrealloc(fd int, off int64, len int64) error {
 	return nil
 }

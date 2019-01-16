@@ -6,8 +6,8 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/tests/test_helpers"
+	"github.com/simonhorlick/gocryptfs/internal/syscallcompat"
+	"github.com/simonhorlick/gocryptfs/tests/test_helpers"
 )
 
 const (
@@ -149,7 +149,7 @@ func TestFallocate(t *testing.T) {
 		}
 	}
 	// We used to allocate 18 bytes too much:
-	// https://github.com/rfjakob/gocryptfs/issues/311
+	// https://github.com/simonhorlick/gocryptfs/issues/311
 	//
 	// 8110 bytes of plaintext should get us exactly 8192 bytes of ciphertext.
 	err = file.Truncate(0)

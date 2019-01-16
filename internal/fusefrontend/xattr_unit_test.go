@@ -6,9 +6,9 @@ package fusefrontend
 import (
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/internal/contentenc"
-	"github.com/rfjakob/gocryptfs/internal/cryptocore"
-	"github.com/rfjakob/gocryptfs/internal/nametransform"
+	"github.com/simonhorlick/gocryptfs/internal/contentenc"
+	"github.com/simonhorlick/gocryptfs/internal/cryptocore"
+	"github.com/simonhorlick/gocryptfs/internal/nametransform"
 )
 
 func newTestFS(args Args) *FS {

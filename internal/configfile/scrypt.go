@@ -7,9 +7,9 @@ import (
 
 	"golang.org/x/crypto/scrypt"
 
-	"github.com/rfjakob/gocryptfs/internal/cryptocore"
-	"github.com/rfjakob/gocryptfs/internal/exitcodes"
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/cryptocore"
+	"github.com/simonhorlick/gocryptfs/internal/exitcodes"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 )
 
 const (

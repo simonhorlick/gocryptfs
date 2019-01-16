@@ -16,14 +16,14 @@ import (
 
 	"github.com/hanwen/go-fuse/fuse"
 
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 )
 
 const sizeofDirent = int(unsafe.Sizeof(unix.Dirent{}))
 
 // maxReclen sanity check: Reclen should never be larger than this.
 // Due to padding between entries, it is 280 even on 32-bit architectures.
-// See https://github.com/rfjakob/gocryptfs/issues/197 for details.
+// See https://github.com/simonhorlick/gocryptfs/issues/197 for details.
 const maxReclen = 280
 
 // getdents wraps unix.Getdents and converts the result to []fuse.DirEntry.
@@ -130,7 +130,7 @@ func dtUnknownWarn(dirfd int) {
 	if err == nil && buf.Type == XFS_SUPER_MAGIC {
 		// Old XFS filesystems always return DT_UNKNOWN. Downgrade the message
 		// to "info" level if we are on XFS.
-		// https://github.com/rfjakob/gocryptfs/issues/267
+		// https://github.com/simonhorlick/gocryptfs/issues/267
 		tlog.Info.Printf("Getdents: convertDType: received DT_UNKNOWN, fstype=xfs, falling back to stat")
 	} else {
 		tlog.Warn.Printf("Getdents: convertDType: received DT_UNKNOWN, fstype=%#x, falling back to stat",

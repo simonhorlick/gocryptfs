@@ -23,16 +23,16 @@ import (
 	"github.com/hanwen/go-fuse/fuse/nodefs"
 	"github.com/hanwen/go-fuse/fuse/pathfs"
 
-	"github.com/rfjakob/gocryptfs/internal/configfile"
-	"github.com/rfjakob/gocryptfs/internal/contentenc"
-	"github.com/rfjakob/gocryptfs/internal/cryptocore"
-	"github.com/rfjakob/gocryptfs/internal/ctlsock"
-	"github.com/rfjakob/gocryptfs/internal/exitcodes"
-	"github.com/rfjakob/gocryptfs/internal/fusefrontend"
-	"github.com/rfjakob/gocryptfs/internal/fusefrontend_reverse"
-	"github.com/rfjakob/gocryptfs/internal/nametransform"
-	"github.com/rfjakob/gocryptfs/internal/openfiletable"
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/configfile"
+	"github.com/simonhorlick/gocryptfs/internal/contentenc"
+	"github.com/simonhorlick/gocryptfs/internal/cryptocore"
+	"github.com/simonhorlick/gocryptfs/internal/ctlsock"
+	"github.com/simonhorlick/gocryptfs/internal/exitcodes"
+	"github.com/simonhorlick/gocryptfs/internal/fusefrontend"
+	"github.com/simonhorlick/gocryptfs/internal/fusefrontend_reverse"
+	"github.com/simonhorlick/gocryptfs/internal/nametransform"
+	"github.com/simonhorlick/gocryptfs/internal/openfiletable"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 )
 
 // doMount mounts an encrypted directory.
@@ -63,7 +63,7 @@ func doMount(args *argContainer) {
 		err = isDir(args.mountpoint)
 	} else {
 		err = isDirEmpty(args.mountpoint)
-		// OSXFuse will create the mountpoint for us ( https://github.com/rfjakob/gocryptfs/issues/194 )
+		// OSXFuse will create the mountpoint for us ( https://github.com/simonhorlick/gocryptfs/issues/194 )
 		if runtime.GOOS == "darwin" && os.IsNotExist(err) {
 			tlog.Info.Printf("Mountpoint %q does not exist, but should be created by OSXFuse",
 				args.mountpoint)
@@ -297,13 +297,13 @@ func initGoFuse(fs pathfs.FileSystem, args *argContainer) *fuse.Server {
 	if args.sharedstorage {
 		// shared storage mode disables hard link tracking as the backing inode
 		// numbers may change behind our back:
-		// https://github.com/rfjakob/gocryptfs/issues/156
+		// https://github.com/simonhorlick/gocryptfs/issues/156
 		pathFsOpts.ClientInodes = false
 	}
 	if args.reverse {
 		// Reverse mode is read-only, so we don't need a working link().
 		// Disable hard link tracking to avoid strange breakage on duplicate
-		// inode numbers ( https://github.com/rfjakob/gocryptfs/issues/149 ).
+		// inode numbers ( https://github.com/simonhorlick/gocryptfs/issues/149 ).
 		pathFsOpts.ClientInodes = false
 	}
 	pathFs := pathfs.NewPathNodeFs(fs, pathFsOpts)

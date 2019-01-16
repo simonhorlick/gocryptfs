@@ -10,9 +10,9 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/rfjakob/gocryptfs/internal/cryptocore"
-	"github.com/rfjakob/gocryptfs/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/cryptocore"
+	"github.com/simonhorlick/gocryptfs/internal/syscallcompat"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 )
 
 const (
@@ -66,7 +66,7 @@ func WriteDirIVAt(dirfd int) error {
 	iv := cryptocore.RandBytes(DirIVLen)
 	// 0400 permissions: gocryptfs.diriv should never be modified after creation.
 	// Don't use "ioutil.WriteFile", it causes trouble on NFS:
-	// https://github.com/rfjakob/gocryptfs/commit/7d38f80a78644c8ec4900cc990bfb894387112ed
+	// https://github.com/simonhorlick/gocryptfs/commit/7d38f80a78644c8ec4900cc990bfb894387112ed
 	fd, err := syscallcompat.Openat(dirfd, DirIVFilename, os.O_WRONLY|os.O_CREATE|os.O_EXCL, 0400)
 	if err != nil {
 		tlog.Warn.Printf("WriteDirIV: Openat: %v", err)

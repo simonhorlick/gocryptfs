@@ -11,10 +11,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rfjakob/gocryptfs/internal/configfile"
-	"github.com/rfjakob/gocryptfs/internal/exitcodes"
+	"github.com/simonhorlick/gocryptfs/internal/configfile"
+	"github.com/simonhorlick/gocryptfs/internal/exitcodes"
 
-	"github.com/rfjakob/gocryptfs/tests/test_helpers"
+	"github.com/simonhorlick/gocryptfs/tests/test_helpers"
 )
 
 var testPw = []byte("test")
@@ -377,7 +377,7 @@ func TestPasswdPasswordIncorrect(t *testing.T) {
 // Check that we correctly background on mount and close stderr and stdout.
 // Something like
 //   gocryptfs a b | cat
-// must not hang ( https://github.com/rfjakob/gocryptfs/issues/130 ).
+// must not hang ( https://github.com/simonhorlick/gocryptfs/issues/130 ).
 func TestMountBackground(t *testing.T) {
 	dir := test_helpers.InitFS(t)
 	mnt := dir + ".mnt"
@@ -497,7 +497,7 @@ func TestExcludeForward(t *testing.T) {
 }
 
 // Check that the config file can be read from a named pipe.
-// Make sure bug https://github.com/rfjakob/gocryptfs/issues/258 does not come
+// Make sure bug https://github.com/simonhorlick/gocryptfs/issues/258 does not come
 // back.
 func TestConfigPipe(t *testing.T) {
 	dir := test_helpers.InitFS(t)
@@ -520,7 +520,7 @@ func TestConfigPipe(t *testing.T) {
 }
 
 // Ciphertext dir and mountpoint contains a comma
-// https://github.com/rfjakob/gocryptfs/issues/262
+// https://github.com/simonhorlick/gocryptfs/issues/262
 func TestComma(t *testing.T) {
 	dir0 := test_helpers.InitFS(t)
 	dir := dir0 + ",foo,bar"

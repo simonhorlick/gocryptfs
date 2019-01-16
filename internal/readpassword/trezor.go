@@ -7,8 +7,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/rfjakob/gocryptfs/internal/exitcodes"
-	"github.com/rfjakob/gocryptfs/internal/tlog"
+	"github.com/simonhorlick/gocryptfs/internal/exitcodes"
+	"github.com/simonhorlick/gocryptfs/internal/tlog"
 
 	"github.com/xaionaro-go/cryptoWallet"
 	"github.com/xaionaro-go/cryptoWallet/vendors"

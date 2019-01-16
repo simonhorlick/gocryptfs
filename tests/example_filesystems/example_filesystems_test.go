@@ -14,8 +14,8 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/internal/stupidgcm"
-	"github.com/rfjakob/gocryptfs/tests/test_helpers"
+	"github.com/simonhorlick/gocryptfs/internal/stupidgcm"
+	"github.com/simonhorlick/gocryptfs/tests/test_helpers"
 )
 
 const statusTxtContent = "It works!\n"

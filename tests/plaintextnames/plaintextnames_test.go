@@ -7,9 +7,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/internal/configfile"
+	"github.com/simonhorlick/gocryptfs/internal/configfile"
 
-	"github.com/rfjakob/gocryptfs/tests/test_helpers"
+	"github.com/simonhorlick/gocryptfs/tests/test_helpers"
 )
 
 var cDir string
